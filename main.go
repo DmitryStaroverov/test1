@@ -3,14 +3,33 @@ package main
 import "fmt"
 
 func main() {
+	var num1, num2 float32
+	var symbol string
+	fmt.Scan(&num1, &num2, &symbol)
 
-	var a, b string
-	var c int
-	fmt.Println("Назови свое имя...")
-	fmt.Scan(&a)
-	fmt.Println("Привет %i Теперь назови свою фамилию...")
-	fmt.Scan(&b)
-	fmt.Println("Привет,", a, b, ". Теперь назови количество полныз лет...")
-	fmt.Scan(&c)
-	fmt.Println("Давай подведем итог: Тебя зовут", a, ", твоя фамилия", b, "и тебе", c, "лет.")
+	switch symbol {
+	case "+":
+		fmt.Print(num1 + num2)
+	case "-":
+		fmt.Print(num1 - num2)
+	case "*":
+		fmt.Print(num1 * num2)
+	case "/":
+
+		if num2 == 0 {
+			fmt.Print("Делить на ноль нельзя!")
+		} else {
+			fmt.Print(num1 / num2)
+		}
+
+	case "%":
+
+		if num2 == 0 {
+			fmt.Print("Делить на ноль нельзя!")
+		} else {
+			fmt.Print(float32(int(num1) % int(num2)))
+		}
+
+	}
+
 }
