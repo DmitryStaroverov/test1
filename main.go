@@ -2,34 +2,34 @@ package main
 
 import "fmt"
 
+var a int
+var b int
+
 func main() {
-	var num1, num2 float32
-	var symbol string
-	fmt.Scan(&num1, &num2, &symbol)
+	var arr [15]int
+	var arr1 [15]int
+	var arr2 [15]int
 
-	switch symbol {
-	case "+":
-		fmt.Print(num1 + num2)
-	case "-":
-		fmt.Print(num1 - num2)
-	case "*":
-		fmt.Print(num1 * num2)
-	case "/":
+	for i := 0; i < len(arr); i++ {
+		fmt.Scan(&arr[i])
 
-		if num2 == 0 {
-			fmt.Print("Делить на ноль нельзя!")
-		} else {
-			fmt.Print(num1 / num2)
-		}
-
-	case "%":
-
-		if num2 == 0 {
-			fmt.Print("Делить на ноль нельзя!")
-		} else {
-			fmt.Print(float32(int(num1) % int(num2)))
+		if arr[i]%2 == 0 {
+			arr2[a] = arr[i]
+			a++
+		} else if arr[i]%2 != 0 {
+			arr1[b] = arr[i]
+			b++
 		}
 
 	}
+	for i := 0; i < len(arr); i++ {
+		if arr2[i] != 0 {
+			fmt.Print(arr2[i], " ")
+		}
+		if arr1[i] != 0 {
+			fmt.Print(arr1[i], " ")
 
+		}
+
+	}
 }
